@@ -1,0 +1,21 @@
+class Student:
+
+    def __init__(self,it=[]):
+        self.items = it
+
+    def studentDetails(self,no,name,coursecode):
+        self.number=no
+        self.name=name
+        self.coursecode=coursecode
+
+    def addStudent(self):
+        self.items.append(self)
+
+name = input("College student details")
+o = Student()
+more = ''
+while True:
+     name = input("Enter student name")
+     number = int(input("Enter student number"))
+     coursecode= (input("Enter course code"))
+     o =
