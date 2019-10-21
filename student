@@ -1,17 +1,21 @@
 class Student:
 
-    def __init__(self,it=[]):
+    def __init__(self,it=[],number=[]):
         self.items = it
+        self.numberl =number
 
     def add(self,sd):
         self.items.append(sd)
+        self.numberl.append(sd.number)
 
     def retrieve(self):
         lengthOfRecords = len(self.items)
 
-        for i in range(0, lengthOfRecords):
-            print("Name: %s Number : %i Course : %s" % (self.items[i].name, self.items[i].number, self.items[i].coursecode))
-
+        self.numberl.sort()
+        for j in range(0, lengthOfRecords):
+            for i in range(0, lengthOfRecords):
+                if self.numberl[j] == self.items[i].number:
+                    print("Name: %s Number : %i Course : %s" % (self.items[i].name, self.items[i].number, self.items[i].coursecode))
 
 class StudentDetails:
 
@@ -19,9 +23,6 @@ class StudentDetails:
         self.number=no
         self.name=name
         self.coursecode=coursecode
-
-    def add(self,sd):
-        self.items.append(sd)
 
 more = ''
 s= Student()
