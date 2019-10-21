@@ -3,6 +3,16 @@ class Student:
     def __init__(self,it=[]):
         self.items = it
 
+    def add(self,sd):
+        self.items.append(sd)
+
+    def retrieve(self):
+        lengthOfRecords = len(self.items)
+
+        for i in range(0, lengthOfRecords):
+            print("Name: %s Number : %i Course : %s" % (self.items[i].name, self.items[i].number, self.items[i].coursecode))
+
+
 class StudentDetails:
 
     def __init__(self,no,name,coursecode):
@@ -13,24 +23,19 @@ class StudentDetails:
     def add(self,sd):
         self.items.append(sd)
 
-    def retrieve(self):
-
-        lengthOfRecords =len(self.items)
-
-        for i in range(0,lengthOfRecords):
-            print("Name: %s Number : %i Course : %s"%(self.items[i].name,self.items[i].number,self.items[i].coursecode))
-
-
 more = ''
+s= Student()
 while True:
-     o = StudentDetails()
      name = input("Enter student name")
      number = int(input("Enter student number"))
      coursecode= (input("Enter course code"))
-     sd = StudentDetails(name,number,coursecode)
-     o.add(sd)
+
+     sd = StudentDetails(number,name,coursecode)
+     s= Student()
+     s.add(sd)
      more = input("Do you want to continue ?")
      if more=='no':
          break
 
-o.retrieve()
+s.retrieve()
+
