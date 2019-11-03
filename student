@@ -49,7 +49,7 @@ class Student:
        # for i in range(0, len(finalList)):
             #  print("Name: %s Number : %i Course : %s" % (finalList[i].name, finalList[i].number, finalList[i].coursecode))
        # return finalList
-    
+
         # self.numberl.sort()
         #for j in range(0, lengthOfRecords):
         #  for i in range(0, lengthOfRecords):
@@ -71,11 +71,16 @@ class StudentDetails:
 for x in range(0, 1000):
     # number = int(input("Enter student number"))
      number = random.randint(10000000, 99999999)
+     snumber = str(number)
+     if len(snumber)!= 8:
+         print("Invalid student number. ")
     # name = input("Enter student name")
      name = "Student-%i"%number
 
     # coursecode= input("Enter course code")
      coursecode = "abcdefg"
+     if len(coursecode) != 7:
+          print("Invalid course number. ")
      sd = StudentDetails(number, name, coursecode)
      s = Student()
      s.add(sd)
