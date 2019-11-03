@@ -18,30 +18,34 @@ class Student:
         for j in range(start, end):
             if pivot > self.items[j].number:
                 i = i + 1
-                temp = self.items[i].number
-                self.items[i].number = self.items[j].number
-                self.items[j].number = temp
-        temp = self.items[i+1].number
-        self.items[i + 1].number = self.items[end].number
-        self.items[end].number = temp
+                temp =StudentDetails(self.items[i].number,self.items[i].name,self.items[i].coursecode)
+        
+                self.items[i] = self.items[j]
+                self.items[j] = temp
+        temp = self.items[i+1]
+        self.items[i + 1] = self.items[end]
+        self.items[end] = temp
         return i + 1
 
     def quicksort(self,start, end):
 
+        s= Student()
         if start < end:
-            q = partition(self.items, start, end)
-            quicksort(start, q - 1)
-            quicksort(q + 1, end)
+            q = s.partition(start, end)
+            s.quicksort(start, q - 1)
+            s.quicksort(q + 1, end)
         return self.items
+
     def retrieve(self):
         lengthOfRecords = len(self.items)
         start =0
         end = lengthOfRecords -1
         finalList=[]
-        finalList=quicksort(start, end)
+        s = Student()
+        finalList=s.quicksort(start, end)
+        print("Name: %s Number : %i Course : %s" % (finalList[0].name, finalList[0].number, finalList[0].coursecode))
 
-        
-       # self.numberl.sort()
+    # self.numberl.sort()
         #for j in range(0, lengthOfRecords):
           #  for i in range(0, lengthOfRecords):
            #     if self.numberl[j] == self.items[i].number:
