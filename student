@@ -42,18 +42,19 @@ class Student:
         finalList = []
         s = Student()
         finalList = s.quicksort(start, end)
-
+        print(len(finalList))
         print("Name: %s Number : %i Course : %s" % (finalList[0].name, finalList[0].number, finalList[0].coursecode))
         finalList.pop(0)
         print(len(finalList))
-        for i in range(0, len(finalList)):
-              print("Name: %s Number : %i Course : %s" % (finalList[i].name, finalList[i].number, finalList[i].coursecode))
-        return finalList
-    # self.numberl.sort()
+       # for i in range(0, len(finalList)):
+            #  print("Name: %s Number : %i Course : %s" % (finalList[i].name, finalList[i].number, finalList[i].coursecode))
+       # return finalList
+    
+        # self.numberl.sort()
         #for j in range(0, lengthOfRecords):
-          #  for i in range(0, lengthOfRecords):
-           #     if self.numberl[j] == self.items[i].number:
-            #        print("Name: %s Number : %i Course : %s" % (self.items[i].name, self.items[i].number, self.items[i].coursecode))
+        #  for i in range(0, lengthOfRecords):
+        #     if self.numberl[j] == self.items[i].number:
+        #        print("Name: %s Number : %i Course : %s" % (self.items[i].name, self.items[i].number, self.items[i].coursecode))
 
 class StudentDetails:
 
@@ -82,5 +83,5 @@ for x in range(0, 1000):
     #if more=='no':
     #     break
 
-print(s.retrieve())
+s.retrieve()
 
