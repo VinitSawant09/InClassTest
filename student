@@ -10,14 +10,42 @@ class Student:
         self.items.append(sd)
         self.numberl.append(sd.number)
 
+    def partition(self, start, end):
+
+        i = start - 1;
+        pivot = self.items[end].number
+        j = start;
+        for j in range(start, end):
+            if pivot > self.items[j].number:
+                i = i + 1
+                temp = self.items[i].number
+                self.items[i].number = self.items[j].number
+                self.items[j].number = temp
+        temp = self.items[i+1].number
+        self.items[i + 1].number = self.items[end].number
+        self.items[end].number = temp
+        return i + 1
+
+    def quicksort(self,start, end):
+
+        if start < end:
+            q = partition(self.items, start, end)
+            quicksort(start, q - 1)
+            quicksort(q + 1, end)
+        return self.items
     def retrieve(self):
         lengthOfRecords = len(self.items)
+        start =0
+        end = lengthOfRecords -1
+        finalList=[]
+        finalList=quicksort(start, end)
 
-        self.numberl.sort()
-        for j in range(0, lengthOfRecords):
-            for i in range(0, lengthOfRecords):
-                if self.numberl[j] == self.items[i].number:
-                    print("Name: %s Number : %i Course : %s" % (self.items[i].name, self.items[i].number, self.items[i].coursecode))
+        
+       # self.numberl.sort()
+        #for j in range(0, lengthOfRecords):
+          #  for i in range(0, lengthOfRecords):
+           #     if self.numberl[j] == self.items[i].number:
+            #        print("Name: %s Number : %i Course : %s" % (self.items[i].name, self.items[i].number, self.items[i].coursecode))
 
 class StudentDetails:
 
