@@ -46,6 +46,8 @@ class Student:
         print("Name: %s Number : %i Course : %s" % (finalList[0].name, finalList[0].number, finalList[0].coursecode))
         finalList.pop(0)
         print(len(finalList))
+        for i in range(0, len(finalList)):
+              print("Name: %s Number : %i Course : %s" % (finalList[i].name, finalList[i].number, finalList[i].coursecode))
         return finalList
     # self.numberl.sort()
         #for j in range(0, lengthOfRecords):
@@ -56,9 +58,9 @@ class Student:
 class StudentDetails:
 
     def __init__(self, no, name, coursecode):
-        self.number=no
-        self.name=name
-        self.coursecode=coursecode
+        self.number = no
+        self.name = name
+        self.coursecode = coursecode
 
 #more = ''
 #s= Student()
