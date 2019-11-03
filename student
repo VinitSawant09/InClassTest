@@ -18,8 +18,7 @@ class Student:
         for j in range(start, end):
             if pivot > self.items[j].number:
                 i = i + 1
-                temp =StudentDetails(self.items[i].number,self.items[i].name,self.items[i].coursecode)
-        
+                temp = StudentDetails(self.items[i].number, self.items[i].name, self.items[i].coursecode)
                 self.items[i] = self.items[j]
                 self.items[j] = temp
         temp = self.items[i+1]
@@ -40,11 +39,14 @@ class Student:
         lengthOfRecords = len(self.items)
         start =0
         end = lengthOfRecords -1
-        finalList=[]
+        finalList = []
         s = Student()
-        finalList=s.quicksort(start, end)
-        print("Name: %s Number : %i Course : %s" % (finalList[0].name, finalList[0].number, finalList[0].coursecode))
+        finalList = s.quicksort(start, end)
 
+        print("Name: %s Number : %i Course : %s" % (finalList[0].name, finalList[0].number, finalList[0].coursecode))
+        finalList.pop(0)
+        print(len(finalList))
+        return finalList
     # self.numberl.sort()
         #for j in range(0, lengthOfRecords):
           #  for i in range(0, lengthOfRecords):
@@ -78,5 +80,5 @@ for x in range(0, 1000):
     #if more=='no':
     #     break
 
-s.retrieve()
+print(s.retrieve())
 
