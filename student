@@ -1,4 +1,5 @@
 #https://github.com/VinitSawant09/InClassTest/blob/master/student
+import random
 class Student:
 
     def __init__(self,it=[],number=[]):
@@ -20,24 +21,30 @@ class Student:
 
 class StudentDetails:
 
-    def __init__(self,no,name,coursecode):
+    def __init__(self, no, name, coursecode):
         self.number=no
         self.name=name
         self.coursecode=coursecode
 
-more = ''
-s= Student()
-while True:
-     name = input("Enter student name")
-     number = int(input("Enter student number"))
-     coursecode= (input("Enter course code"))
+#more = ''
+#s= Student()
 
-     sd = StudentDetails(number,name,coursecode)
-     s= Student()
+#while True:
+
+for x in range(0, 1000):
+    # number = int(input("Enter student number"))
+     number = random.randint(10000000, 99999999)
+    # name = input("Enter student name")
+     name = "Student-%i"%number
+
+    # coursecode= input("Enter course code")
+     coursecode = "abcdefg"
+     sd = StudentDetails(number, name, coursecode)
+     s = Student()
      s.add(sd)
-     more = input("Do you want to continue ?")
-     if more=='no':
-         break
+    #more = input("Do you want to continue ?")
+    #if more=='no':
+    #     break
 
 s.retrieve()
 
