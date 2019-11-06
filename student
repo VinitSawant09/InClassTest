@@ -60,6 +60,17 @@ class Student:
         #     if self.numberl[j] == self.items[i].number:
         #        print("Name: %s Number : %i Course : %s" % (self.items[i].name, self.items[i].number, self.items[i].coursecode))
 
+    def insertionsort(self):
+        l = len(self.items)
+        print(l)
+        for i in range(1, l):
+            j = i
+            while j > 0 and self.items[j - 1].number > self.items[j].number:
+                temp = self.items[j]
+                self.items[j] =self.items[j - 1]
+                self.items[j - 1] = temp
+                j = j - 1
+    
 class StudentDetails:
 
     def __init__(self, no, name, coursecode):
@@ -102,7 +113,7 @@ while more!='no':
     s = Student()
     s.add(sd)
     more = ("Do you want to add more records ?");
-s.insert()
+s.insertionsort()
 
 
 
