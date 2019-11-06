@@ -8,7 +8,7 @@ implemented Quick sort algorithm (assuming the right most element as the pivot e
 
 Then arised the question of inserting a single data into already sorted records of students.
 For this I implemented Insertion sort- (adding data in a sorted list obtained by using
-quick sort earlier) as insertion sort is efficient than quick sort.
+quick sort earlier) as insertion sort is efficient than quick sort for already sorted list.
 
 For the output : I have displayed the popped out first record with lowest student number.
 After bulk adding of data using quick sort I have given the option to add more record 1 at a time and again
