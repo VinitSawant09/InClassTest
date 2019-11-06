@@ -1,4 +1,21 @@
 #https://github.com/VinitSawant09/InClassTest/blob/master/student
+
+'''
+
+Description about the code:
+For bulk insertion of student data with random numbers, names(comprises of string "Student"+number) and course code I have
+implemented Quick sort algorithm (assuming the right most element as the pivot element.)
+
+Then arised the question of inserting a single data into already sorted records of students.
+For this I implemented Insertion sort- (adding data in a sorted list obtained by using
+quick sort earlier) as insertion sort is efficient than quick sort.
+
+For the output : I have displayed the popped out first record with lowest student number.
+After bulk adding of data using quick sort I have given the option to add more record 1 at a time and again
+popping out the first record from the list with lowest student number and displaying the same .
+
+'''
+
 import random
 class Student:
 
@@ -35,10 +52,6 @@ class Student:
             s.quicksort(q + 1, end)
         return self.items
 
-    def insertionsort(self):
-        lengthOfRecords = len(self.items)
-
-
     def retrieve(self):
         lengthOfRecords = len(self.items)
         start =0
@@ -46,10 +59,10 @@ class Student:
         finalList = []
         s = Student()
         finalList = s.quicksort(start, end)
-        print(len(finalList))
+        print("The following is the record of the student with lowest student number :")
         print("Name: %s Number : %i Course : %s" % (finalList[0].name, finalList[0].number, finalList[0].coursecode))
         finalList.pop(0)
-        print(len(finalList))
+
        # for i in range(0, len(finalList)):
             #  print("Name: %s Number : %i Course : %s" % (finalList[i].name, finalList[i].number, finalList[i].coursecode))
        # return finalList
@@ -62,7 +75,7 @@ class Student:
 
     def insertionsort(self):
         l = len(self.items)
-        print(l)
+
         for i in range(1, l):
             j = i
             while j > 0 and self.items[j - 1].number > self.items[j].number:
@@ -70,10 +83,10 @@ class Student:
                 self.items[j] =self.items[j - 1]
                 self.items[j - 1] = temp
                 j = j - 1
-        print(len(self.items))
+        print("The following is the record of the student with lowest student number :")
         print("Name: %s Number : %i Course : %s" % (self.items[0].name, self.items[0].number, self.items[0].coursecode))
         self.items.pop(0)
-        print(len(self.items))
+
 
 
 class StudentDetails:
@@ -91,9 +104,10 @@ class StudentDetails:
 for x in range(0, 1000):
     # number = int(input("Enter student number"))
      number = random.randint(10000000, 99999999)
-     snumber = str(number)
-     if len(snumber)!= 8:
-         print("Invalid student number. ")
+    # snumber = str(number)
+    # if len(snumber)!= 8:
+    #    print("Invalid student number. ")
+
     # name = input("Enter student name")
      name = "Student-%i"%number
 
@@ -114,7 +128,6 @@ while more!='no':
     name = "Student-%i" % number
     coursecode = "abcdefg"
     sd = StudentDetails(number, name, coursecode)
-    s = Student()
     s.add(sd)
     s.insertionsort()
     more = input("Do you want to add more records ?")
