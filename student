@@ -2,7 +2,7 @@
 import random
 class Student:
 
-    def __init__(self,it=[],number=[]):
+    def __init__(self,it=[], number=[]):
         self.items = it
         self.numberl =number
 
@@ -34,6 +34,10 @@ class Student:
             s.quicksort(start, q - 1)
             s.quicksort(q + 1, end)
         return self.items
+
+    def insertionsort(self):
+        lengthOfRecords = len(self.items)
+
 
     def retrieve(self):
         lengthOfRecords = len(self.items)
@@ -89,4 +93,17 @@ for x in range(0, 1000):
     #     break
 
 s.retrieve()
+more = input("Do you want to add more records to the already existing student record?")
+while more!='no':
+    number = random.randint(10000000, 99999999)
+    name = "Student-%i" % number
+    coursecode = "abcdefg"
+    sd = StudentDetails(number, name, coursecode)
+    s = Student()
+    s.add(sd)
+    more = ("Do you want to add more records ?");
+s.insert()
+
+
+
 
