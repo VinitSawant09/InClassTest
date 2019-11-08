@@ -122,7 +122,7 @@ for x in range(0, 10000):
      s.add(sd)
 
 s.retrieve()
-...
+
 # For inserting more records single at a time in an already sorted list of records
 more = input("Do you want to add more records to the already existing student record?")
 while more!='no':
@@ -143,5 +143,5 @@ while more!='no':
 
 
 
-...
+
 
